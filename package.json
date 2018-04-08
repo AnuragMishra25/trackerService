@@ -1,0 +1,27 @@
+{
+  "name": "trackerservice",
+  "version": "1.0.0",
+  "description": "this is for attributionly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnuragMishra25/trackerService.git"
+  },
+  "keywords": [
+    "track"
+  ],
+  "author": "anuragmishra.manit@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnuragMishra25/trackerService/issues"
+  },
+  "homepage": "https://github.com/AnuragMishra25/trackerService#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
+ 
