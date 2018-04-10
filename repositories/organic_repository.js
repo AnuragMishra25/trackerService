@@ -1,7 +1,7 @@
 const Models = require('../models/index');
 
 const sequelize = Models.sequelize;
-
+const Op = sequelize.Op;
 const Organic = Models.organic;
 const organicAttributes = require('../attributes/organic');
 

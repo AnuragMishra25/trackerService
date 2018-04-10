@@ -1,7 +1,7 @@
 const Models = require('../models/index');
 
 const sequelize = Models.sequelize;
-
+const Op = sequelize.Op;
 const Google = Models.google;
 const googleAttributes = require('../attributes/google');
 

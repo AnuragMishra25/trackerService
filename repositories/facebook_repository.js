@@ -1,7 +1,7 @@
 const Models = require('../models/index');
 
 const sequelize = Models.sequelize;
-
+const Op = sequelize.Op;
 const Facebook = Models.facebook;
 const facebookAttributes = require('../attributes/facebook');
 

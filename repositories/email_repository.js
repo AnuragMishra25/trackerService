@@ -1,7 +1,7 @@
 const Models = require('../models/index');
 
 const sequelize = Models.sequelize;
-
+const Op = sequelize.Op;
 const Email = Models.email;
 const emailAttributes = require('../attributes/email');
 
