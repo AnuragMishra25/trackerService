@@ -5,6 +5,12 @@ async function getEmailDataById(id) {
     return email;
 }
 
+async function getEmailData(params) {
+    const email = await emailRepository.getEmailData(params);
+    return email;
+}
+
 module.exports = {
-    getEmailDataById
+    getEmailDataById,
+    getEmailData
 }

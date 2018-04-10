@@ -5,6 +5,12 @@ async function getFacebookDataById(id) {
     return facebook;
 }
 
+async function getFacebookData(params) {
+    const facebook = await facebookRepository.getFacebookData(params);
+    return facebook;
+}
+
 module.exports = {
-    getFacebookDataById
+    getFacebookDataById,
+    getFacebookData
 }

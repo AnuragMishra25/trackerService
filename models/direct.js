@@ -30,12 +30,22 @@ module.exports = function (sequelize, DataTypes) {
         time: {
             type: DataTypes.DATE,
             allowNull: true,
-            field: 'campaign_name',
+            field: 'time',
         },
         others: {
             type: DataTypes.STRING,
             allowNull: true,
             field: 'others',
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+            field: 'created_at',
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+            field: 'updated_at',
         },
     }, {
             tableName: 'direct',

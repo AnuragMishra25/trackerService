@@ -17,4 +17,18 @@ router.get('/:id',
   },
 );
 
+router.get('/', async (req, res, next) => {
+  try {
+    const result = await emailService.getEmailData(req.query);
+    return res.status(200).json({
+      total: result.length,
+      cp: 1,
+      status: 'success',
+      data: result,
+    });
+  } catch (err) {
+    return next(err);
+  }
+})
+
 module.exports = router;

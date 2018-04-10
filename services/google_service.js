@@ -5,6 +5,12 @@ async function getGoogleDataById(id) {
     return google;
 }
 
+async function getGoogleData(params) {
+    const google = await googleRepository.getGoogleData(params);
+    return google;
+}
+
 module.exports = {
-    getGoogleDataById
+    getGoogleDataById,
+    getGoogleData
 }

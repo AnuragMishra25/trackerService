@@ -5,6 +5,12 @@ async function getOrganicDataById(id) {
     return organic;
 }
 
+async function getOrganicData(params) {
+    const organic = await organicRepository.getOrganicData(params);
+    return organic;
+}
+
 module.exports = {
-    getOrganicDataById
+    getOrganicDataById,
+    getOrganicData
 }
