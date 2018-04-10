@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function (sequelize, DataTypes) {
     return sequelize.define('registeredUsers', {
         id: {
             type: DataTypes.BIGINT,
