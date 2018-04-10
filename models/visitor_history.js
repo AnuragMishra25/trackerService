@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('visitoHistory', {
+    return sequelize.define('visitorHistory', {
         id: {
             type: DataTypes.BIGINT,
             allowNull: false,
