@@ -17,4 +17,15 @@ router.get('/:id',
   },
 );
 
+router.post('/', async(req, res, next) =>{
+  try {
+    const result = await visitorHistoryService.createVisitorHistory(req.body.data);
+    return res.status(201).json({
+      id: result,
+    });
+  } catch (err) {
+    return next(err);
+  }
+})
+
 module.exports = router;

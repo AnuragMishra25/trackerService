@@ -23,26 +23,43 @@ async function getFacebookData(params) {
         let value = searches[i].value;
         //searches = [{key:columnName, value: text},]
         orObject.push({
-            key:{
-                [Op.like] : searches[i].value
+            key: {
+                [Op.like]: searches[i].value
             }
         })
     }
 
-    let start = (pageSize*currentPage)-pageSize;
+    let start = (pageSize * currentPage) - pageSize;
     //indexing of currentPage is from 1 and not 0
     const result = await Facebook.findAndCountAll({
         where: {
-          [Op.and]:orObject
+            [Op.and]: orObject
         },
         limit: pageSize,
         offset: start,
         order: [sortExp]
-      });
+    });
     return result;
+}
+
+async function createFacebookEntry(data, transaction) {
+    let obj = {};
+    obj.medium = data.medium;
+    obj.campaignName = data.campaign;
+    obj.term = data.term;
+    obj.content = data.content;
+    obj.others = data.others == undefined ? null : data.others;
+    obj.visitCounter = data.visitCounter;
+
+    const tempData = Object.assign({}, obj, {
+        createdAt: new Date(),
+        updatedAt: null,
+    });
+    return Facebook.create(tempData, { transaction });
 }
 
 module.exports = {
     getFacebookDataById,
-    getFacebookData
+    getFacebookData,
+    createFacebookEntry
 }

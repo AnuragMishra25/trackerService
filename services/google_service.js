@@ -1,7 +1,7 @@
 const googleRepository = require('../repositories/google_repository');
 
 async function getGoogleDataById(id) {
-    const google = await googleRepository.getGoogleDataById(1);
+    const google = await googleRepository.getGoogleDataById(id);
     return google;
 }
 

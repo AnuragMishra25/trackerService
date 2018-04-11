@@ -1,7 +1,7 @@
 const emailRepository = require('../repositories/email_repository');
 
 async function getEmailDataById(id) {
-    const email = await emailRepository.getEmailDataById(1);
+    const email = await emailRepository.getEmailDataById(id);
     return email;
 }
 

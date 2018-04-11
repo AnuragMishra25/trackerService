@@ -42,7 +42,24 @@ async function getEmailData(params) {
     return result;
 }
 
+async function createEmailEntry(data, transaction) {
+    let obj = {};
+    obj.medium = data.medium;
+    obj.campaignName = data.campaign;
+    obj.term = data.term;
+    obj.content = data.content;
+    obj.others = data.others == undefined ? null : data.others;
+    obj.visitCounter = data.visitCounter;
+
+    const tempData = Object.assign({}, obj, {
+        createdAt: new Date(),
+        updatedAt: null,
+    });
+    return Email.create(tempData, { transaction });
+}
+
 module.exports = {
     getEmailDataById,
-    getEmailData
+    getEmailData,
+    createEmailEntry
 }

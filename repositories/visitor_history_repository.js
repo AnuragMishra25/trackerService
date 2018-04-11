@@ -11,6 +11,15 @@ async function getVisitorHistoryById(id) {
     return result;
 }
 
+async function createVisitorHistory(data, transaction) {
+    const tempData = Object.assign({}, data, {
+        createdAt: new Date(),
+        updatedAt: null,
+    });
+    return VisitorHistory.create(tempData, { transaction });
+}
+
 module.exports = {
-    getVisitorHistoryById
+    getVisitorHistoryById,
+    createVisitorHistory,
 }

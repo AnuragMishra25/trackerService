@@ -7,7 +7,7 @@ const emailService = require('../services/email_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await emailService.getEmailDataById(id);
+      const result = await emailService.getEmailDataById(req.params.id);
       return res.status(200).json({
         data: result,
       });

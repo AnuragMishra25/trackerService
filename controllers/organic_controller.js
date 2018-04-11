@@ -7,7 +7,7 @@ const organicService = require('../services/organic_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await organicService.getOrganicDataById(id);
+      const result = await organicService.getOrganicDataById(req.params.id);
       return res.status(200).json({
         data: result,
       });
