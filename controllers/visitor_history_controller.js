@@ -7,7 +7,7 @@ const visitorHistoryService = require('../services/visitor_history_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await visitorHistoryService.getVisitorHistoryById(id);
+      const result = await visitorHistoryService.getVisitorHistoryById(req.params.id);
       return res.status(200).json({
         data: result,
       });

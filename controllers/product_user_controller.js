@@ -7,7 +7,7 @@ const productUserService = require('../services/product_user_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await productUserService.getProductUserById(id);
+      const result = await productUserService.getProductUserById(req.params.id);
       return res.status(200).json({
         data: result,
       });
