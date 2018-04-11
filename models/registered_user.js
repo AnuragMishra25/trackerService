@@ -23,9 +23,19 @@ module.exports = function (sequelize, DataTypes) {
             field: 'phone_number',
         },
         history: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: true,
             field: 'history',
+        },
+        createdAt:{
+            type: DataTypes.DATE,
+            allowNull: true,
+            field: 'created_at'
+        },
+        updatedAt:{
+            type: DataTypes.DATE,
+            allowNull: true,
+            field: 'updated_at'
         }
     }, {
             tableName: 'registered_users',

@@ -4,6 +4,6 @@ module.exports = [
     'medium',
     'term',
     'content',
-    'time',
+    'visitCounter',
     'others'
 ]

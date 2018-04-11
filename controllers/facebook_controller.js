@@ -7,7 +7,7 @@ const facebookService = require('../services/facebook_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await facebookService.getFacebookDataById(id);
+      const result = await facebookService.getFacebookDataById(req.params.id);
       return res.status(200).json({
         data: result,
       });

@@ -27,13 +27,13 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
             field: 'content',
         },
-        time: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            field: 'time',
+        visitCounter:{
+            type:DataTypes.INTEGER,
+            allowNull : true,
+            field: 'visit_counter'
         },
         others: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: true,
             field: 'others',
         },

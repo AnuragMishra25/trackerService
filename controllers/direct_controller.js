@@ -7,7 +7,7 @@ const directService = require('../services/direct_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await directService.getDirectById(1);
+      const result = await directService.getDirectById(req.params.id);
       return res.status(200).json({
         data: result,
       });

@@ -7,7 +7,7 @@ const googleService = require('../services/google_service');
 router.get('/:id',
   async (req, res, next) => {
     try {
-      const result = await googleService.getGoogleDataById(id);
+      const result = await googleService.getGoogleDataById(req.params.id);
       return res.status(200).json({
         data: result,
       });
