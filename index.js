@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const path = require('path')
 const app = express();
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +24,7 @@ app.use('/', require('./controllers/index'));
 
 app.get('/healthcheck', (req, res, next) => { res.status(200).send('OK'); });
 
-app.listen(3000, function () {
-    console.log("Ndde app started on port 3000!!");
+app.listen(port, function () {
+    console.log("Ndde app started on port !!" + port);
 });
 
