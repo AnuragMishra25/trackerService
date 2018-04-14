@@ -23,11 +23,27 @@ async function getOrganicData(params) {
     for (let i = 0; i < searches.length; i++) {
         let some = searches[i].key;
         let value = searches[i].value;
-        orObject.push({
-            [searches[i].key]: {
-                [Op.like]: '%'+searches[i].value+'%'
+        if (some == 'visitCounter') {
+            if (value == '6') {
+                orObject.push({
+                    [searches[i].key]: {
+                        [Op.gt]: 5
+                    }
+                })
+            } else {
+                orObject.push({
+                    [searches[i].key]: {
+                        [Op.eq]: searches[i].value
+                    }
+                })
             }
-        })
+        } else {
+            orObject.push({
+                [searches[i].key]: {
+                    [Op.like]: '%' + searches[i].value + '%'
+                }
+            })
+        }
     }
     let start = (pageSize * currentPage) - pageSize;
     const result = await Organic.findAndCountAll({
