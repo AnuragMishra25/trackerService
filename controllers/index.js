@@ -11,5 +11,6 @@ router.use('/direct', require('./direct_controller'));
 router.use('/facebook', require('./facebook_controller'));
 router.use('/google', require('./google_controller'));
 router.use('/email', require('./email_controller'));
+router.use('/domain', require('./domain_controller'));
 
 module.exports = router;
