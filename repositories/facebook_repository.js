@@ -65,6 +65,8 @@ async function createFacebookEntry(data, transaction) {
     obj.content = data.content;
     obj.others = data.others == undefined ? null : data.others;
     obj.visitCounter = data.visitCounter;
+    obj.device = data.device;
+    obj.domainId = data.domainId;
 
     const tempData = Object.assign({}, obj, {
         createdAt: new Date(),

@@ -37,6 +37,16 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
             field: 'others',
         },
+        domainId:{
+            type: DataTypes.BIGINT,
+            allowNull: true,
+            field: 'domain_id',
+        },
+        device:{
+            type: DataTypes.STRING,
+            allowNull: true,
+            field: 'device',
+        },
         createdAt: {
             type: DataTypes.DATE,
             allowNull: true,

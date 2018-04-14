@@ -6,6 +6,7 @@ const Op = sequelize.Op;
 const Direct = Models.direct;
 const directAttributes = require('../attributes/direct');
 
+
 async function getDirectById(id) {
     const result = await Direct.findById(id,
         { attributes: directAttributes });
@@ -66,6 +67,8 @@ async function createDirectEntry(data, transaction) {
     obj.content = data.content;
     obj.others = data.others == undefined ? null : data.others;
     obj.visitCounter = data.visitCounter;
+    obj.device = data.device;
+    obj.domainId = data.domainId;
 
     const tempData = Object.assign({}, obj, {
         createdAt: new Date(),

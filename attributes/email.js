@@ -5,5 +5,7 @@ module.exports = [
     'term',
     'content',
     'visitCounter',
-    'others'
+    'others',
+    'device',
+    'domainId'
 ]
