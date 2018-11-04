@@ -12,9 +12,9 @@ const sequelize = new Sequelize('attribution', 'username', 'password', {
     host: 'attributiondbinstance.cr3khkirkklm.us-east-2.rds.amazonaws.com',
     port: 3306,
     logging: console.log,
-    maxConcurrentQueries: 500,
+    maxConcurrentQueries: 5000,
     dialect: 'mysql',
-    pool: { maxConnections: 10, maxIdleTime: 50 },
+    pool: { maxConnections: 100, maxIdleTime: 50 },
     language: 'en'
 })
 
